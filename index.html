@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pay Tracker</title>
+<meta name="description" content="Track shifts, pay rates and pay periods.">
+<meta name="theme-color" content="#17407e" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#13233f" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pay Tracker">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="top">
+    <h1>Pay Tracker</h1>
+    <button class="icon-btn" id="settingsBtn" aria-label="Backup and settings">⚙</button>
+  </div>
+  <div class="summary" id="summary"></div>
+</header>
+
+<main id="view"><div class="empty">Loading…</div></main>
+
+<button class="fab" id="fab" aria-label="Add">+</button>
+
+<nav>
+  <button data-view="timesheet" class="on"><span class="ic">🕒</span>Timesheet</button>
+  <button data-view="periods"><span class="ic">📅</span>Pay Periods</button>
+  <button data-view="rates"><span class="ic">💲</span>Pay Rates</button>
+</nav>
+
+<dialog id="dlg"><form class="dlg" id="form" method="dialog"></form></dialog>
+<input type="file" id="importFile" accept=".json,.csv,application/json,text/csv,text/plain" hidden>
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
